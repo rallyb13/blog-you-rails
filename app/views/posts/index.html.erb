@@ -1,0 +1,13 @@
+<h3>Blog You!</h3>
+
+<ul>
+  <% if @posts.any? %>
+    <% @posts.each do |post| %>
+      <li> <%= post.name %> </li>
+    <% end %>
+  <% else %>
+    <p> You'd better get bloggin'. </p>
+  <% end %>
+</ul>
+
+<%= link_to "Create New Post", new_post_path %>
