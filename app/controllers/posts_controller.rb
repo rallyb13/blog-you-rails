@@ -19,4 +19,30 @@ class PostsController < ApplicationController
     end
   end
 
+  def show
+    @post = Post.find(params[:id])
+  end
+
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    if @post.update(params[:post])
+      flash[:notice] = @post.name + " entry updated. Thank you for caring enough to edit."
+      redirect_to post_path(@post)
+    else
+      flash[:alert] = "Oh no! It's all gone wrong again."
+      redirect_to edit_post_path(@post)
+    end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    flash[:notice] = "Trogdor has burninated your post."
+    redirect_to posts_path
+  end
+
 end
