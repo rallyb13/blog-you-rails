@@ -12,6 +12,10 @@
         <% @post.comments.each do |comment| %>
           <li>
             <%= comment.content %>
+            <%= comment.created_at %>
+            <%= link_to "Edit Comment", edit_post_comment_path(@post, comment) %>
+            <%= link_to "Eliminate Comment", post_comment_path(@post, comment),
+                        :data => {:confirm => "Comment Destruct?", :method => "delete"} %>
           </li>
         <% end %>
       <% else %>
