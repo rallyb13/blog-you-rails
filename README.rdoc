@@ -9,7 +9,6 @@ This application relies on Postgres.
 You will need to gem install rails first (if your computer isn't set up for it).
 You can then go the terminal and enter the following commands:
 
-###
 postgres (leave it running in the background, do everything else in another tab)
 
 bundle (your gemfile is pre-loaded)
@@ -22,7 +21,7 @@ rails s (this starts the Rails Server)
 
 
 Great! You should now be ready to roll on localhost:3000/
-###
+
 
 
 Future Features:
