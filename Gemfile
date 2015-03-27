@@ -7,9 +7,8 @@ gem 'uglifier'
 gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
-# gem 'bcrypt-ruby', '~> 3.1.5', require: 'bcrypt'
-# gem 'paperclip', "~> 4.2"
-# gem 'aws-sdk'
+gem 'bcrypt-ruby', '~> 3.1.5', require: 'bcrypt'
+gem 'bootstrap-sass'
 
 
 
@@ -28,4 +27,5 @@ end
 group :test do
   gem 'shoulda-matchers'
   gem 'capybara'
+  gem 'factory_girl_rails'
 end
