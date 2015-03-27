@@ -14,9 +14,9 @@
             <%= comment.content %>
             <%= comment.created_at %>
             <%= comment.user.email %>
-            <%= link_to "Edit Comment", edit_post_comment_path(@post, comment) %>
+            <%= link_to "Edit Comment", edit_post_comment_path(@post, comment), class: "btn btn-xs btn-info" %>
             <%= link_to "Eliminate Comment", post_comment_path(@post, comment),
-                        :data => {:confirm => "Comment Destruct?", :method => "delete"} %>
+                        :data => {:confirm => "Comment Destruct?", :method => "delete"}, class: "btn btn-xs btn-danger" %>
           </li>
         <% end %>
       <% else %>
@@ -26,9 +26,8 @@
   </div>
 
 
-  <%= link_to "Add Comment", new_post_comment_path(@post) %>
-  <%= link_to "Edit Post", edit_post_path(@post) %>
+  <%= link_to "Add Comment", new_post_comment_path(@post), class: "btn btn-md btn-success" %>
+  <%= link_to "Edit Post", edit_post_path(@post), class: "btn btn-md btn-info" %>
   <%= link_to "Destroy Post Forever", post_path(@post),
-            :data => {:confirm => "Obliterate for eternity?!?", :method => "delete"} %>
-  <%= link_to "Return", posts_path %>
+            :data => {:confirm => "Obliterate for eternity?!?", :method => "delete"}, class: "btn btn-md btn-danger" %>
 </div>

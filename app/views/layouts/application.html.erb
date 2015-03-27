@@ -10,12 +10,14 @@
     <nav class="navbar navbar-info">
       <h2>BLOG-U</h2>
       <ul>
-        <li><%= link_to "The Posts", posts_path %></li>
+        <li><%= link_to "All Posts", posts_path %></li>
         <% if current_user %>
           <li><%= link_to "Sign Out", log_out_path %></li>
+          <li><%= link_to "My Posts", user_path(current_user) %></li>
         <% else %>
           <li><%= link_to "Sign Up", new_user_path %></li>
           <li><%= link_to "Sign In", log_in_path %></li>
+
         <% end %>
       </ul>
     </nav>

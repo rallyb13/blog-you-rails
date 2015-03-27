@@ -6,3 +6,24 @@
   margin-top: 5%;
   padding-top: 0;
 }
+
+.navbar {
+  padding: 2%;
+  background-color: chartreuse;
+}
+
+.navbar li {
+  display: inline;
+  margin-right: 5%;
+}
+
+.navbar a {
+  color: #F93;
+}
+
+.comments li {
+  background-color: #F93;
+  margin-bottom: 3px;
+  padding: 3px;
+  list-style-type: none;
+}
