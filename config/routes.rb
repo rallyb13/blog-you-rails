@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   post '/log-in' => 'sessions#create'
   get '/log-out' => 'sessions#destroy', as: :log_out
 
-  resources :users
+  resources :users, :only => [:new, :create, :show]
 
   resources :posts do
     resources :comments, :except => [ :index, :show ]
