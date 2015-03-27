@@ -9,7 +9,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(params[:post])
+    @post = Post.new(post_params)
     if @post.save
       flash[:notice] = @post.name + " has been successfully saved. Your words are out in the world."
       redirect_to posts_path
@@ -29,7 +29,7 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    if @post.update(params[:post])
+    if @post.update(post_params)
       flash[:notice] = @post.name + " entry updated. Thank you for caring enough to edit."
       redirect_to post_path(@post)
     else
@@ -44,5 +44,10 @@ class PostsController < ApplicationController
     flash[:notice] = "Trogdor has burninated your post."
     redirect_to posts_path
   end
+
+  private
+    def post_params
+      params.require(:post).permit(:name, :content)
+    end
 
 end

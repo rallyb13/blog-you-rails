@@ -23,7 +23,7 @@ class CommentsController < ApplicationController
 
   def update
     @comment = Comment.find(params[:id])
-    if @comment.update(params[:comment])
+    if @comment.update(comment_params)
       flash[:notice] = "Reply replaced."
       redirect_to post_path(@comment.post)
     else

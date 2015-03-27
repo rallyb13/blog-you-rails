@@ -3,18 +3,18 @@ Blog You!
 This is a simple blogging application written in Ruby (2.2.0), with Rails (4.2.1).
 
 It relies on Postgres as well.
-You will need to gem install rails first.
+You will need to gem install rails first (if your computer isn't set up for it).
 You can then go the terminal and enter the following commands:
-
-rake db:migrate
-    (and if you plan to run tests, you'll also want to enter: rake db:test:prepare)
-
-bundle (your gemfile is pre-loaded)
 
 postgres (leave it running in the background, do everything else in another tab)
 
-rails s (this starts the Rails Server)
+bundle (your gemfile is pre-loaded)
 
+rake db:create
+rake db:migrate
+    (and if you plan to run tests, you'll also want to enter: rake db:test:prepare)
+
+rails s (this starts the Rails Server)
 
 Great! You should now be ready to roll on localhost:3000/
 
