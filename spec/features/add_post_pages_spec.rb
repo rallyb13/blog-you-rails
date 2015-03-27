@@ -2,6 +2,8 @@ require 'rails_helper'
 
 describe "the add a post process" do
   it "adds a new post" do
+    user1 = FactoryGirl.create(:user)
+    sign_in(user1)
     visit posts_path
     click_on 'Create New Post'
     fill_in "Title", :with => "Top 10"
@@ -11,6 +13,8 @@ describe "the add a post process" do
   end
 
   it "throws an alert if a post isn't saved" do
+    user1 = FactoryGirl.create(:user)
+    sign_in(user1)
     visit posts_path
     click_on 'Create New Post'
     fill_in "Content", :with => "Here's my top ten books of the year..."
