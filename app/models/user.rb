@@ -4,6 +4,9 @@ class User < ActiveRecord::Base
   validates :password, confirmation: true
   before_save :encrypt_password
 
+  has_many :posts
+  has_many :comments
+
   def encrypt_password
     unless password.nil?
       self.password_salt = BCrypt::Engine.generate_salt

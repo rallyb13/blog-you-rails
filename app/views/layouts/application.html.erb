@@ -11,19 +11,22 @@
       <h2>BLOG-U</h2>
       <ul>
         <li><%= link_to "The Posts", posts_path %></li>
-
-        <li><%= link_to "Sign Up", new_user_path %></li>
-        <li><%= link_to "Sign In", log_in_path %></li>
-        <li><%= link_to "Sign Out", log_out_path %></li>
-
+        <% if current_user %>
+          <li><%= link_to "Sign Out", log_out_path %></li>
+        <% else %>
+          <li><%= link_to "Sign Up", new_user_path %></li>
+          <li><%= link_to "Sign In", log_in_path %></li>
+        <% end %>
       </ul>
     </nav>
-    <% flash.each do |name, msg| %>
-      <% if msg.is_a?(String) %>
-        <div data-alert class="alert alert-<%= name.to_s == 'notice' ? 'success' : 'danger' %>" role="alert"><%= msg %></div>
+    <div class="container">
+      <% flash.each do |name, msg| %>
+        <% if msg.is_a?(String) %>
+          <div data-alert class="alert alert-<%= name.to_s == 'notice' ? 'success' : 'danger' %>" role="alert"><%= msg %></div>
+        <% end %>
       <% end %>
-    <% end %>
-    <%= yield %>
+      <%= yield %>
+    </div>
 
   </body>
 </html>

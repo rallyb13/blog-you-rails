@@ -9,7 +9,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = current_user.posts.new(post_params)
     if @post.save
       flash[:notice] = @post.name + " has been successfully saved. Your words are out in the world."
       redirect_to posts_path

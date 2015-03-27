@@ -8,6 +8,7 @@ class CommentsController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.new(comment_params)
+    @comment.user_id = current_user.id
     if @comment.save
       flash[:notice] = "Your comment has been added to the historical record."
       redirect_to post_path(@comment.post)

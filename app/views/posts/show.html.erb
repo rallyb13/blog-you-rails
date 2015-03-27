@@ -1,7 +1,7 @@
 <div class="container">
   <div class="well">
     <h3><%= @post.name %></h3>
-    <h6><%= @post.created_at %></h6>
+    <h6><%= @post.created_at %> by <%= @post.user.email %></h6>
 
     <p><%= @post.content %></p>
   </div>
@@ -13,6 +13,7 @@
           <li>
             <%= comment.content %>
             <%= comment.created_at %>
+            <%= comment.user.email %>
             <%= link_to "Edit Comment", edit_post_comment_path(@post, comment) %>
             <%= link_to "Eliminate Comment", post_comment_path(@post, comment),
                         :data => {:confirm => "Comment Destruct?", :method => "delete"} %>
