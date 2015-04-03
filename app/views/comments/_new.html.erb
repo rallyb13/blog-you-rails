@@ -1,6 +1,8 @@
+<h4>Add New Comment:</h4>
+
 <%= render "layouts/errors", :object => @comment %>
 
-<%= form_for [@post, @comment] do |f| %>
+<%= form_for [@post, @comment], remote: true do |f| %>
 <%= f.label :content %>
 <%= f.text_area :content %>
 <%= f.submit "Reply"%>

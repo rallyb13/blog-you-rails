@@ -10,10 +10,14 @@ class CommentsController < ApplicationController
     @comment = @post.comments.new(comment_params)
     @comment.user_id = current_user.id
     if @comment.save
-      flash[:notice] = "Your comment has been added to the historical record."
-      redirect_to post_path(@comment.post)
-    else
-      render :new
+      respond_to do |format|
+        format.html {redirect_to post_path(@comment.post)}
+        format.js
+      end
+    #   flash[:notice] = "Your comment has been added to the historical record."
+    #   redirect_to post_path(@comment.post)
+    # else
+    #   render :new
     end
   end
 

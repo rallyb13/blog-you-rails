@@ -1,0 +1,10 @@
+<li class="one">
+  <%= comment.content %>
+  <div class="comment_extras">
+    <%= comment.created_at %>
+    <%= comment.user.email %>
+    <%= link_to "Edit Comment", edit_post_comment_path(@post, comment), class: "btn btn-xs btn-info" %>
+    <%= link_to "Eliminate Comment", post_comment_path(@post, comment),
+        :data => {:confirm => "Comment Destruct?", :method => "delete"}, class: "btn btn-xs btn-danger" %>
+  </div>
+</li>

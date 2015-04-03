@@ -23,6 +23,8 @@ rails s (this starts the Rails Server)
 Great! You should now be ready to roll on localhost:3000/
 
 
+BUG:
+You can currently edit someone else's post/comment. Whoops.
 
 Future Features:
 Move add comment form onto posts#show together with displayed comments, with AJAX help. (removing comments#new)
