@@ -1,6 +1,8 @@
 FactoryGirl.define do
   factory(:user) do
     email('egg@yolkmail.com')
+    username('Egg Gray')
+    phone('5555555555')
     password('scramble')
     password_confirmation('scramble')
   end
