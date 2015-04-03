@@ -14,9 +14,9 @@ class Comment < ActiveRecord::Base
       :password => ENV['TWILIO_AUTH_TOKEN'],
       :payload => {
         Body: "You have a new comment",
-        From: 9713202132,
-        To: @post.user.phone }
-        ).execute
+        To: @post.user.phone,
+        From: 9713202132 }
+      ).execute
     end
 
 
