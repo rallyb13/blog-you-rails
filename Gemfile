@@ -9,6 +9,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'bcrypt-ruby', '~> 3.1.5', require: 'bcrypt'
 gem 'bootstrap-sass'
+gem 'rest-client'
 
 
 
@@ -22,6 +23,7 @@ end
 group :test, :development do
   gem 'rspec-rails'
   gem 'pry'
+  gem 'dotenv-rails'
 end
 
 group :test do

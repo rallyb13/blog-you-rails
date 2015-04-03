@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   resources :posts do
     resources :comments, :except => [ :index, :show ]
   end
+
+  resources :messages, :only => [:new, :create]
 end
