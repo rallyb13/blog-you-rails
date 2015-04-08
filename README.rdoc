@@ -22,13 +22,13 @@ rails s (this starts the Rails Server)
 Great! You should now be ready to roll on localhost:3000/
 
 In Progress:
-Twilio messages don't quite send yet. Unauthorized error.
--I disabled the attempted send so that at least comments can still be added
-(and with AJAX, too).
+
 Phantom & VCR specs/updating specs that fail with AJAX changes.
 Heroku not updated with AJAX/API changes.
 
 BUGS:
+Twilio message gave me Unauthorized error once, but sent messages on later attempts.
+-unsure what changed.
 You can currently edit someone else's post/comment. Whoops.
 Heroku: flash messages/errors aren't coming across, but it works/worked
 on application on localhost:3000 (flashes won't work where

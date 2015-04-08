@@ -2,12 +2,11 @@ class Comment < ActiveRecord::Base
   belongs_to :post
   validates :content, :presence => true
   belongs_to :user
-  # before_create :send_sms
+  before_create :send_sms
 
   private
 
     def send_sms
-# binding.pry
       response = RestClient::Request.new(
       :method => :post,
       :url => "https://api.twilio.com/2010-04-01/Accounts/#{ENV['TWILIO_ACCOUNT_SID']}/Messages.json",
